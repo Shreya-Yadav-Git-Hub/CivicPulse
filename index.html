@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicPulse | Civic Issue Reporting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span><span>Civic<span class="brand-accent">Pulse</span><small>Better streets. Better communities.</small></span></a>
+    <nav><a href="#dashboard">Dashboard</a><a href="#report">Report an issue</a><a href="#complaints">Track complaints</a></nav>
+    <span class="demo-tag">STUDENT PROJECT</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span> YOUR CITY, YOUR VOICE</span>
+        <h1>Small reports.<br><span>Meaningful change.</span></h1>
+        <p>Report civic issues, understand what needs attention first, and follow each complaint from registration to resolution.</p>
+        <a class="primary-btn" href="#report">＋ Report an issue</a>
+        <a class="text-link" href="#complaints">Explore complaints <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-label="Civic community illustration">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="building b-one"><i></i><i></i><i></i><i></i></div>
+        <div class="building b-two"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="building b-three"><i></i><i></i><i></i><i></i></div>
+        <div class="tree tree-one"><b></b><i></i></div><div class="tree tree-two"><b></b><i></i></div>
+        <div class="road"><span class="road-line"></span></div>
+        <div class="hero-note"><span class="note-icon">✓</span><span><b>Every report counts</b><small>Be part of the solution</small></span></div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section">
+      <div class="section-heading"><div><span class="eyebrow">AT A GLANCE</span><h2>Community overview</h2></div><span class="updated">Demo data updates as you report</span></div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon green">▤</span><span class="stat-label">Total complaints</span><strong id="totalCount">0</strong><small>All submitted reports</small></article>
+        <article class="stat-card"><span class="stat-icon amber">◷</span><span class="stat-label">In progress</span><strong id="progressCount">0</strong><small>Being looked into</small></article>
+        <article class="stat-card"><span class="stat-icon blue">✓</span><span class="stat-label">Resolved</span><strong id="resolvedCount">0</strong><small>Marked as resolved</small></article>
+        <article class="stat-card"><span class="stat-icon purple">↗</span><span class="stat-label">High priority</span><strong id="highCount">0</strong><small>Priority score 100+</small></article>
+      </div>
+    </section>
+
+    <section id="report" class="section report-layout">
+      <div class="section-heading"><div><span class="eyebrow">MAKE YOURSELF HEARD</span><h2>Report a civic issue</h2><p class="section-subtitle">Share a few details so the issue can be prioritised.</p></div></div>
+      <form id="complaintForm" class="form-card">
+        <div class="form-grid">
+          <label>Citizen name<input id="citizenName" required maxlength="60" placeholder="e.g. Aditi Sharma"></label>
+          <label>Issue type<select id="issueType" required><option value="">Select an issue</option><option value="pothole">Pothole / damaged road</option><option value="water">Water leakage</option><option value="garbage">Garbage / waste</option><option value="streetlight">Streetlight issue</option><option value="drainage">Drainage / flooding</option><option value="other">Other civic issue</option></select></label>
+          <label class="full">Location<input id="location" required maxlength="120" placeholder="Street, area or landmark"></label>
+          <label>Severity <span class="label-hint">(1 = low, 5 = critical)</span><select id="severity" required><option value="1">1 — Low</option><option value="2">2 — Mild</option><option value="3" selected>3 — Moderate</option><option value="4">4 — Serious</option><option value="5">5 — Critical</option></select></label>
+          <label>People affected<input id="peopleAffected" type="number" min="1" max="1000000" value="10" required></label>
+        </div>
+        <div class="priority-preview"><span><b>Priority score</b><small>Severity × people affected</small></span><strong id="priorityPreview">30</strong></div>
+        <button class="primary-btn submit-btn" type="submit">Submit complaint <span>→</span></button>
+        <p class="form-note">Educational demo only. Reports are saved in this browser, not sent to a municipality.</p>
+      </form>
+    </section>
+
+    <section id="complaints" class="section">
+      <div class="section-heading list-heading"><div><span class="eyebrow">TRANSPARENCY & FOLLOW-UP</span><h2>Complaint tracker</h2><p class="section-subtitle">Search, sort and update the sample complaints below.</p></div>
+        <div class="toolbar"><input id="searchInput" class="search-input" placeholder="Search ID, issue or location…" aria-label="Search complaints"><select id="sortSelect" aria-label="Sort complaints"><option value="newest">Newest first</option><option value="priority">Highest priority</option></select></div>
+      </div>
+      <div id="complaintList" class="complaint-list"></div>
+      <div id="emptyState" class="empty-state" hidden><span>⌕</span><h3>No complaints found</h3><p>Try another search or register a new complaint.</p></div>
+    </section>
+    <section class="bottom-banner"><div class="banner-icon">✳</div><div><h3>Better cities start with people who care.</h3><p>One clear report can help bring attention to a shared problem.</p></div><a href="#report">Report an issue <span>→</span></a></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">C</span><span>Civic<span class="brand-accent">Pulse</span><small>Data Structures mini project</small></span></a><span>Built for educational demonstration · Java + web interface</span></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
